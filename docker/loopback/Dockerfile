@@ -1,5 +1,5 @@
 # our base image
-FROM node:14
+FROM node:18
 
 # specify the port number the container should expose
 EXPOSE 3001
@@ -12,7 +12,7 @@ RUN mkdir /app
 
 # Update Linux Packages
 RUN apt-get update && apt-get upgrade -y
-RUN apt-get install mysql-client -y
+RUN apt-get install default-mysql-client -y
 
 # Run update and Strongloop install
 RUN npm install -g npm
